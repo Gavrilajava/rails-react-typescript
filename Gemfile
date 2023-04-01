@@ -45,6 +45,9 @@ gem "sassc-rails"
 gem "bulma-rails"
 gem "haml-rails"
 
+gem 'jass-react-jsx'
+gem "importmap-rails", ">= 0.3.4", github: "mtgrosser/importmap-rails", branch: "main"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

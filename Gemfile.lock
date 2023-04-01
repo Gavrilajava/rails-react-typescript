@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/mtgrosser/importmap-rails.git
+  revision: cbc97f4c32afa16210d3dfac2e839fa5693710d2
+  branch: main
+  specs:
+    importmap-rails (1.0.3)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,6 +115,8 @@ GEM
     io-console (0.6.0)
     irb (1.6.2)
       reline (>= 0.3.0)
+    jass-react-jsx (0.3.0)
+      nodo (>= 1.6.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -134,6 +145,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nodo (1.6.4)
     nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     pg (1.4.6)
@@ -204,16 +216,10 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus-rails (1.2.1)
-      railties (>= 6.0.0)
     temple (0.10.0)
     thor (1.2.1)
     tilt (2.1.0)
     timeout (0.3.2)
-    turbo-rails (1.4.0)
-      actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     web-console (4.2.0)
@@ -237,6 +243,8 @@ DEPENDENCIES
   factory_bot_rails
   faker
   haml-rails
+  importmap-rails (>= 0.3.4)!
+  jass-react-jsx
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
@@ -245,8 +253,6 @@ DEPENDENCIES
   rspec-rails
   sassc-rails
   sprockets-rails
-  stimulus-rails
-  turbo-rails
   tzinfo-data
   web-console
 
