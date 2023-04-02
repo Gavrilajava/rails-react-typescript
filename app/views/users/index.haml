@@ -3,20 +3,4 @@
     %h1.title This is Users index page
 
 .columns
-  .column
-    %table.table
-      %thead
-        %tr
-          %th First Name
-          %th Last Name 
-          %th Email 
-          %th Actions
-      %tbody
-        -@users.each do |user|
-          %tr
-            %td=user.first_name
-            %td=user.last_name
-            %td=user.email
-            %td
-              .button.is-small.is-danger
-                Delete
+  .column#users{data: {props: {users: @users}.to_json}}
