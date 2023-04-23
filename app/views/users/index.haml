@@ -2,5 +2,6 @@
   .column
     %h1.title This is Users index page
 
+
 .columns
-  .column#users{data: {props: {users: @users}.to_json}}
+  .column{data: {behavior: :react, component: "#{asset_path("containers/DataTable.js")}",  props: @users}}

@@ -1,1 +1,1 @@
-import "components/index.jsx";
+import 'index.js'
