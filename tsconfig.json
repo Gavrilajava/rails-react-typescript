@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+      "module": "system",
+      "noImplicitAny": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "strictNullChecks": true,
+      "jsx": "react",
+      "target": "ES2017"
+  },
+  "include": [
+      "app/javascript/**/*"  ],
+  "exclude": [
+      "node_modules",
+  ]
+}

@@ -1,0 +1,7 @@
+.columns
+  .column
+    %h1.title This is Users index page
+
+
+.columns
+  .column{data: {behavior: :react, component: "#{asset_path("containers/DataTable.js")}",  props: @users}}
