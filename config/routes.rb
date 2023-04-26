@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  resources :users, except: [:new, :edit, :show]
+  resources :users, only: [:index]
 end

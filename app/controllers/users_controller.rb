@@ -4,15 +4,4 @@ class UsersController < ApplicationController
     @users = User.limit(20)
   end
 
-  def create
-
-  end
-
-  def update
-
-  end
-
-  def destroy
-
-  end
 end
