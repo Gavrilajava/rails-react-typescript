@@ -1,15 +1,40 @@
-// importing libraries
-import ReactDOM from "react-dom";
-import UsersTable from "components/UsersTable.jsx";
+const reactContainersNodelist = document.querySelectorAll('[data-behavior="react"]')
 
-//finding node
-const node = document.getElementById('users')
+if (reactContainersNodelist.length) {
 
-//getting props
-const props = JSON.parse(node.dataset.props)
+  const React = await import('react')
+  const ReactDOM = await import('react-dom')
 
-//render users table
-ReactDOM.render(
-  <UsersTable {...props}/>,
-  node
-);
+  const reactContainers = Array.prototype.slice.call(reactContainersNodelist).reduce((result, el) => {
+
+    result[el.dataset.component] ||= []
+    result[el.dataset.component].push(el)
+    return result
+
+  }, {})
+
+  const App = (Component, props) => {
+
+    return (
+      <div>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Component {...props}/>
+        </React.Suspense>
+      </div>
+    )
+
+  }
+
+  Object.entries(reactContainers).forEach(([path, nodes]) => {
+
+    const Component = React.lazy(() => import(path))
+
+    for (const node of nodes) {
+
+      ReactDOM.render(App(Component, JSON.parse(node.dataset.props)), node)
+
+    }
+
+  })
+
+}

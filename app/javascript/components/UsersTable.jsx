@@ -11,7 +11,6 @@ const UsersTable = props => {
           <th>First Name</th>
           <th>Last Name </th>
           <th>Email</th>
-          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -21,11 +20,6 @@ const UsersTable = props => {
               <td>{user.first_name}</td>
               <td>{user.last_name}</td>
               <td>{user.email}</td>
-              <td>
-                <div className="button is-small is-danger">
-                  Delete
-                </div>
-              </td>
             </tr>
           )
         })}
