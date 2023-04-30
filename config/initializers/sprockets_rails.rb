@@ -29,5 +29,5 @@ class TSXCompiler < Nodo::Core
 
 end
 
-Sprockets.register_mime_type 'text/tsx', extensions: %w[.tsx], charset: :unicode
+Sprockets.register_mime_type 'text/tsx', extensions: %w[.tsx .ts], charset: :unicode
 Sprockets.register_transformer 'text/tsx', 'application/javascript', TSXCompiler

@@ -1,6 +1,6 @@
 import React from 'react'
 
-type TableProps = {
+interface TableProps {
   headers: string[]
   children: JSX.Element[]
 }

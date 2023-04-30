@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type TableRowProps = {
+export interface TableRowProps {
   key: string
   children: JSX.Element[]
 }
