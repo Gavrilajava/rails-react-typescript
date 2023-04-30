@@ -3,4 +3,4 @@
     %h1.title This is Users index page
 
 .columns
-  .column#users{data: {props: {users: @users}.to_json}}
+  .column{data: {behavior: :react, component: "#{asset_path("components/UsersTable.js")}",  props: {users: @users}.to_json}}

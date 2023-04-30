@@ -1,40 +1,43 @@
-const reactContainersNodelist = document.querySelectorAll('[data-behavior="react"]')
+document.addEventListener('DOMContentLoaded', async () => {
 
-if (reactContainersNodelist.length) {
+  const reactContainersNodelist = document.querySelectorAll('[data-behavior="react"]')
 
-  const React = await import('react')
-  const ReactDOM = await import('react-dom')
+  if (reactContainersNodelist.length) {
 
-  const reactContainers = Array.prototype.slice.call(reactContainersNodelist).reduce((result, el) => {
+    const React = await import('react')
+    const ReactDOM = await import('react-dom')
 
-    result[el.dataset.component] ||= []
-    result[el.dataset.component].push(el)
-    return result
+    const reactContainers = Array.prototype.slice.call(reactContainersNodelist).reduce((result, el) => {
 
-  }, {})
+      result[el.dataset.component] ||= []
+      result[el.dataset.component].push(el)
+      return result
 
-  const App = (Component, props) => {
+    }, {})
 
-    return (
-      <div>
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Component {...props}/>
-        </React.Suspense>
-      </div>
-    )
+    const App = (Component, props) => {
 
-  }
-
-  Object.entries(reactContainers).forEach(([path, nodes]) => {
-
-    const Component = React.lazy(() => import(path))
-
-    for (const node of nodes) {
-
-      ReactDOM.render(App(Component, JSON.parse(node.dataset.props)), node)
+      return (
+        <div>
+          <React.Suspense fallback={<div>Loading...</div>}>
+            <Component {...props}/>
+          </React.Suspense>
+        </div>
+      )
 
     }
 
-  })
+    Object.entries(reactContainers).forEach(([path, nodes]) => {
 
-}
+      const Component = React.lazy(() => import(path))
+
+      for (const node of nodes) {
+
+        ReactDOM.render(App(Component, JSON.parse(node.dataset.props)), node)
+
+      }
+
+    })
+
+  }
+})
